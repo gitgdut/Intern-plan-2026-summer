@@ -1,8 +1,8 @@
-#实习计划任务之部署最小合约
+# 实习计划任务之部署最小合约
 
-##AI生成合约
+## AI生成合约
 
-###prompt
+### prompt
 [2026/7/7 19:47] purple sun: 帮我用solidity写一个简单的打卡合约，打卡人数可以自定义，我哪里说的不够准确就先问我
 [2026/7/7 19:48] My Hermes: ❓ ❓ 关于这个打卡合约，我有几个问题需要确认：
 
@@ -71,29 +71,39 @@ purple: 加上：能查某地址历史总打卡次数 + 今天打卡总人数 + 
 直接写合约：
 [2026/7/7 19:53] My Hermes: ✍️ write_file: "/home/bodier/DailyCheckIn.sol"
 
-###人工修改说明
+### 人工修改说明
 检查代码版本和编译器版本是否一致
 
 
-###需要人工核验的地方
+### 需要人工核验的地方
 1.测试输入和输出是否符合要求；
 2.测试是否有泄露私钥的风险；
 3.用区块链浏览器验证是否生成了合约地址的生成
 4。检查git文件是否完整
 
-##部署合约到Monad测试网
+## 部署合约到Monad测试网
 
-##合约地址
+## 合约地址
 0xa2956cC534a022b86aD85B61Fa36e1267568A1E0
 
-##部署交易哈希
+## 部署交易哈希
 0x7a4f458521c6406d8829e8903a41029f842a00810851fe76ab4a327fa51a1d3e
 
-##合约交互hash
+## 合约交互hash
 0x68cc297497d511630e7a48b6bc725a01e581ed6f56f3b26e237b1d415deadf41
 
-##合约交互截图
+## 合约交互截图
 <img width="1242" height="584" alt="屏幕截图 2026-07-07 210435" src="https://github.com/user-attachments/assets/50ce12f7-1e96-4f4c-9fca-cc8af90504ff" />
+
+getTodayCount()函数检查今天打卡的人数。
+
+hasCheckedInToday(adress)函数检查某个人是否打卡。
+
+checkIn()函数打卡。
+
+getTotalCheckIns(addness)函数检查总共打卡次数。
+
+1个人1天只能打卡1次。
 
 
 
