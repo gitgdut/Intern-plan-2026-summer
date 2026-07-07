@@ -1,66 +1,106 @@
-## Foundry
+#实习计划任务之部署最小合约
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+##AI生成合约
 
-Foundry consists of:
+###prompt
+[2026/7/7 19:47] purple sun: 帮我用solidity写一个简单的打卡合约，打卡人数可以自定义，我哪里说的不够准确就先问我
+[2026/7/7 19:48] My Hermes: ❓ ❓ 关于这个打卡合约，我有几个问题需要确认：
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+1. **"打卡人数可以自定义"** — 具体指什么？
+2. **打卡规则** — 怎么算打卡成功？
+3. **有什么限制？**
+4. **还有其他功能吗？**
 
-## Documentation
+选一个最接近你需求的，或者选「其他」补充说明 👇
 
-https://book.getfoundry.sh/
+purple: ① 部署时设定参与人数上限，参与者各自打卡（如日常签到），每人每天/每轮只能打一次
+[2026/7/7 19:48] My Hermes: 你说得对，有几个关键点需要先确认一下：
+[2026/7/7 19:48] My Hermes: ❓ clarify: "关于这个打卡合约，我有几个问题需要确认： 1. **"打卡人数可以自定义"..."
+[2026/7/7 19:50] My Hermes: ⏳ Still working... (2 min elapsed — iteration 2/90, receiving stream response)
+[2026/7/7 19:50] My Hermes: ❓ ❓ 还有几个细节：
 
-## Usage
+1. **"每轮"怎么定义？** 什么时候可以重新打卡？
 
-### Build
+2. **需要哪些查询功能？**
+   - 查某地址打过卡没？
+   - 查当前有多少人打过卡？
+   - 查某人历史打卡次数？
+   - 导出所有打卡记录？
 
-```shell
-$ forge build
-```
+3. **打卡时需要附带信息吗？** 比如备注、位置之类？
 
-### Test
+你选一个重置方式，然后告诉我查询需求 👇
 
-```shell
-$ forge test
-```
+purple: 每天自动重置（按UTC时间自然日，0点后可以再打）
+[2026/7/7 19:50] My Hermes: 好的，清楚了！再确认几个细节：
+[2026/7/7 19:50] My Hermes: ❓ clarify: "还有几个细节： 1. "每轮"怎么定义？ 什么时候可以重新打卡？ ..."
+[2026/7/7 19:51] My Hermes: ❓ ❓ 查询功能要哪些？打卡需要附带文字备注吗？
 
-### Format
+选一个，我直接开写 👇
 
-```shell
-$ forge fmt
-```
+purple: 加上：能查某地址历史总打卡次数 + 今天打卡总人数 + 打卡记录
+[2026/7/7 19:51] My Hermes: 明白，每天 UTC 0 点自动重置。再问最后一个：
+[2026/7/7 19:51] My Hermes: ❓ clarify: "查询功能要哪些？打卡需要附带文字备注吗？ 选一个，我直接开写 👇"
+[2026/7/7 19:53] My Hermes: ⏳ Still working... (5 min elapsed — iteration 4/90, receiving stream response)
+[2026/7/7 19:53] My Hermes: 好，需求已经非常清楚了，汇总一下：
 
-### Gas Snapshots
+人数上限
 
-```shell
-$ forge snapshot
-```
+• 需求: 人数上限
 
-### Anvil
+• 方案: 部署时自定义 + 管理员可修改
 
-```shell
-$ anvil
-```
+打卡频率
 
-### Deploy
+• 需求: 打卡频率
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+• 方案: 每人每天（UTC）一次
 
-### Cast
+重置
 
-```shell
-$ cast <subcommand>
-```
+• 需求: 重置
 
-### Help
+• 方案: 每天 UTC 0 点自动重置
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+查询
+
+• 需求: 查询
+
+• 方案: 今日是否打过 / 今日总数 / 历史总次数 / 打卡记录
+
+直接写合约：
+[2026/7/7 19:53] My Hermes: ✍️ write_file: "/home/bodier/DailyCheckIn.sol"
+
+###人工修改说明
+检查代码版本和编译器版本是否一致
+
+
+###需要人工核验的地方
+1.测试输入和输出是否符合要求；
+2.测试是否有泄露私钥的风险；
+3.用区块链浏览器验证是否生成了合约地址的生成
+4。检查git文件是否完整
+
+##部署合约到Monad测试网
+
+##合约地址
+0xa2956cC534a022b86aD85B61Fa36e1267568A1E0
+
+##部署交易哈希
+0x7a4f458521c6406d8829e8903a41029f842a00810851fe76ab4a327fa51a1d3e
+
+##合约交互hash
+0x68cc297497d511630e7a48b6bc725a01e581ed6f56f3b26e237b1d415deadf41
+
+##合约交互截图
+<img width="1242" height="584" alt="屏幕截图 2026-07-07 210435" src="https://github.com/user-attachments/assets/50ce12f7-1e96-4f4c-9fca-cc8af90504ff" />
+
+
+
+
+
+
+
+
+
+
