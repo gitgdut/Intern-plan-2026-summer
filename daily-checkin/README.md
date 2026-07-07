@@ -1,5 +1,8 @@
 # 实习计划任务之部署最小合约
 
+## 项目介绍
+这是一个打卡系统，每个人都可以通过部署合约来创建打卡事件作为事件组织方，参与者可以通过调用函数checkIn()来参与打卡，打卡会消耗一定的代币，getTodayCount()函数检查今天打卡的人数，hasCheckedInToday(adress)函数检查某个人是否打卡，getTotalCheckIns(addness)函数检查总共打卡次数。
+
 ## AI生成合约
 
 ### prompt
