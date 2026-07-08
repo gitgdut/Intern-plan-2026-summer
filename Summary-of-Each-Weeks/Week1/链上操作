@@ -1,0 +1,37 @@
+# 课程钱包生成以及测试网交易
+
+## 1.课程钱包生成
+
+### 钱包类型：
+
+Metamask
+
+### 钱包地址如图所示：
+
+0xdc1746793D71256Be16B70188297ab5aB056208F
+
+### 不同点：
+
+链上产品的归属时被记录到区块链上的地址中，具有去中心化的特性，普通互联网产品的归属是记录到中心化公司的数据库中，可以被篡改，只要只有自己掌握私钥，链上产品就绝对安全；链上产品在追求去中心化的同时牺牲了课扩展性和效率，在这2方面远远不如普通互联网产品；链上产品因为追求去中心化，所以更为复杂，需要相当程度的数学和计算机底层知识才能开发好。
+
+![pasted-20260707-181620.webp](https://web3career.build/api/proof-attachments?key=proof-attachments%2F0eXEV8KU4eNPbHixfmvlu00gNgFVM3Yg%2Fcmqns0cuonzkyph01xufn6k9l%2F6626dd45-8458-45c0-87c6-2b8e9c14a2a6.webp)
+
+![pasted-20260707-181718.webp](https://web3career.build/api/proof-attachments?key=proof-attachments%2F0eXEV8KU4eNPbHixfmvlu00gNgFVM3Yg%2Fcmqns0cuonzkyph01xufn6k9l%2F41b590f7-3f48-4733-9c25-8d570a33494f.webp)
+
+
+
+## 测试网交易
+
+### Transaction hash：
+
+0x23db115d2ba02705116bd06626d9e394feae1d195287f3c6440562fc6356d682
+
+### 区块链浏览器链接：
+
+https://testnet.monadscan.com/tx/0x23db115d2ba02705116bd06626d9e394feae1d195287f3c6440562fc6356d682
+
+### 交易说明：
+
+用户创建了交易，用私钥签名，然后将交易发送给一个节点，该节点的验证者从mempool选取交易并打包成区块，如果交易无效就丢弃交易，如果有效则执行交易（扣除手续费并更新账户状态），交易所在区块被验证后就，该区块就链接到前一个区块，随后重复该过程，该区块就被新的区块链接，于是就被不断确认。
+
+![屏幕截图 2026-07-07 181612.webp](https://web3career.build/api/proof-attachments?key=proof-attachments%2F0eXEV8KU4eNPbHixfmvlu00gNgFVM3Yg%2Fcmqolaf8uo7a5ph01n4461znr%2F4e6cd0df-3d45-4d17-9fb2-822bf3aa2928.webp)
